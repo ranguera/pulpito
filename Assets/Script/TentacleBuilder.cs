@@ -23,7 +23,7 @@ public class TentacleBuilder : MonoBehaviour
         for (i = 0; i < num_tentacles; i++)
         {
             previous_link = Instantiate(tentacle_link, transform.forward *.6f, transform.rotation, body);
-            tentacleManager.AddLink(i, previous_link.transform);
+            tentacleManager.AddLink(i, previous_link.GetComponent<Link>());
             CreateTentacle();
             transform.Rotate(Vector3.up, angle);
         }
@@ -33,10 +33,10 @@ public class TentacleBuilder : MonoBehaviour
     {
         for (int j = 0; j < num_links; j++)
         {
-            link = Instantiate(tentacle_link, previous_link.transform.position + (previous_link.transform.forward*.2f*link_size_decrement), previous_link.transform.rotation, body);
+            link = Instantiate(tentacle_link, previous_link.transform.position + (previous_link.transform.forward*.1f*link_size_decrement), previous_link.transform.rotation, body);
             link.transform.localScale = previous_link.transform.localScale * link_size_decrement;
             previous_link = link;
-            tentacleManager.AddLink(i, link.transform);
+            tentacleManager.AddLink(i, link.GetComponent<Link>());
         }
     }
 }

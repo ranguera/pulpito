@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Tentacle
 {
-    public List<Transform> tentacle;
+    public List<Link> tentacle;
 }
