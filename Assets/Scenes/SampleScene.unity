@@ -565,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tentacle_base: {fileID: 359146321}
   head: {fileID: 1945944257}
-  off: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
+  off: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
   on: {r: 3.9821546, g: 2.9550831, b: 0.23424439, a: 1}
 --- !u!1 &1945944257
 GameObject:
