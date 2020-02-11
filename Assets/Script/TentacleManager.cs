@@ -60,6 +60,7 @@ public class TentacleManager : MonoBehaviour
             for (int i = 0; i < tentacles.Count; i++)
             {
                 tentacles[i].tentacle[j].gameObject.GetComponent<Renderer>().material.color = on;
+                tentacles[i].tentacle[j].gameObject.GetComponent<Light>().color = on;
             }
             yield return 0;
 
@@ -68,6 +69,7 @@ public class TentacleManager : MonoBehaviour
                 for (int i = 0; i < tentacles.Count; i++)
                 {
                     tentacles[i].tentacle[j-1].gameObject.GetComponent<Renderer>().material.color = off;
+                    tentacles[i].tentacle[j].gameObject.GetComponent<Light>().color = off;
                 }
                 yield return 0;
             }
@@ -76,6 +78,7 @@ public class TentacleManager : MonoBehaviour
         for (int i = 0; i < tentacles.Count; i++)
         {
             tentacles[i].tentacle[tentacles[i].tentacle.Count - 1].gameObject.GetComponent<Renderer>().material.color = off;
+            tentacles[i].tentacle[tentacles[i].tentacle.Count - 1].gameObject.GetComponent<Light>().color = off;
         }
     }
 
@@ -113,11 +116,11 @@ public class TentacleManager : MonoBehaviour
             for (int i = 0; i < tentacles.Count; i++)
             {
                 tentacles[i].tentacle[j].gameObject.GetComponent<Renderer>().material.color = Color.HSVToRGB(h,s,v,true);
+                tentacles[i].tentacle[j].gameObject.GetComponent<Light>().color = Color.HSVToRGB(h, s, v, true);
             }
             yield return 0;
         }
 
-        yield return 0;
         yield return 0;
 
         for (int j = 0; j < tentacles[0].tentacle.Count; j++)
@@ -125,6 +128,7 @@ public class TentacleManager : MonoBehaviour
             for (int i = 0; i < tentacles.Count; i++)
             {
                 tentacles[i].tentacle[j].gameObject.GetComponent<Renderer>().material.color = Color.HSVToRGB(ogh, ogs, ogv, true);
+                tentacles[i].tentacle[j].gameObject.GetComponent<Light>().color = Color.HSVToRGB(ogh, ogs, ogv, true);
             }
             yield return 0;
         }
