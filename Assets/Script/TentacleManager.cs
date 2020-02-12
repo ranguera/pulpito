@@ -47,6 +47,9 @@ public class TentacleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+            Application.Quit();
+
         ProcessGlobals();
         ChangeMode();
         ProcessMode();
